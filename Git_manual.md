@@ -15,3 +15,11 @@
 * git add - сохранение в сиситеме git
 * git branch - выводит список веток
 * git merge - слияние веток
+* создание нового репозитория на Github
+1. echo "# Geek" >> README.md
+2. git init
+3. git add README.md
+4. git commit -m "first commit"
+5. git branch -M main
+6. git remote add origin https://github.com/DaemoniumLupus/Geek.git
+7. git push -u origin main
