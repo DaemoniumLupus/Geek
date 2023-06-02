@@ -15,6 +15,9 @@
 * git add - сохранение в сиситеме git
 * git branch - выводит список веток
 * git merge - слияние веток
+
+
+
 * создание нового репозитория на Github
 1. echo "# Geek" >> README.md
 2. git init
