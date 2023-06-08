@@ -9,3 +9,4 @@
 * Console.Write("Hello, World!"); - Вывод без перехода на новою строку
 * Console.ReadLine(); - ввод из консоли
 * new Random().Next(min,max) - даст случайное число от min до max-1
+* переменная .ToLower - делает все буквы маленькими
