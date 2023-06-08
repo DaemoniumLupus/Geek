@@ -10,3 +10,5 @@
 * Console.ReadLine(); - ввод из консоли
 * new Random().Next(min,max) - даст случайное число от min до max-1
 * переменная .ToLower - делает все буквы маленькими
+* Console.Clear(); - очистка консоли
+* Console.SetCursorPosition(10, 4); - установка курсора (столбец, строка)
