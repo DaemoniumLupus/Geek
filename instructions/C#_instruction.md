@@ -5,4 +5,6 @@
 
 ## Команды
 ---
-* Console.WriteLine("Hello, World!"); - вывод строки в консоль
+* Console.WriteLine("Hello, World!"); - вывод строки в консоль с переходом на новую строку
+* Console.Write("Hello, World!"); - Вывод без перехода на новою строку
+* Console.ReadLine(); - ввод из консоли
