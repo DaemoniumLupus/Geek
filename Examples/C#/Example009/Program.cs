@@ -6,10 +6,13 @@ string input_2 = Console.ReadLine() ?? "";
 
 int numIn_1 = int.Parse(input_1);
 int numIn_2 = int.Parse(input_2);
-int result = numIn_1 * numIn_1;
+bool result = numIn_1 * numIn_1 == numIn_2;
 
-if (result == numIn_2){
+if (result)
+{
   Console.Write("Yes");
-}else{
+}
+else
+{
   Console.WriteLine("No");
 }
