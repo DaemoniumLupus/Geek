@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 int Transform(int num)
 {
   while (num > 999)
@@ -7,11 +7,12 @@ int Transform(int num)
   }
   return num;
 }
-int Result(int num){
-
+void Result(int num)
+{
+  Console.WriteLine(num % 10);
 }
 
-int res;
+
 Console.WriteLine("Enter number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 if (num < 100)
@@ -21,11 +22,13 @@ if (num < 100)
 else if (num > 999)
 {
   num = Transform(num);
-  res = Result(num);
-} else{
-res = Result(num);
+  Result(num);
 }
-  
+else
+{
+  Result(num);
+}
+
 
 
 
