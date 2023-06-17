@@ -19,7 +19,7 @@ try
 {
 
 }
-catch
+catch (Exception exc)
 {
   Console.WriteLine($"Ошибка ввода данных{exc.Message}");
   return;
