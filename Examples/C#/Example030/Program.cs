@@ -1,23 +1,23 @@
 ﻿Console.Clear();
-int[] RandomArray = new int[8];
+int[] Arr = new int[8];
 
-ArrayRand(RandomArray);
+ArrayRand(Arr);
 
-Write(RandomArray);
+Write(Arr);
 
 
 
 void ArrayRand(int[] RandomArray)
 {
-for (int i = 0; i < RandomArray.Length; i++)
+  for (int i = 0; i < RandomArray.Length; i++)
   {
-    RandomArray[i] = Rand(0,2);
+    RandomArray[i] = Rand(0, 2);
   }
-  
+
 }
 
 
-int Rand(int a,int b)
+int Rand(int a, int b)
 {
   return new Random().Next(a, b);
 }
@@ -25,6 +25,7 @@ int Rand(int a,int b)
 void Write(int[] RandomArray)
 {
   Console.Write("{");
+
   for (int i = 0; i < RandomArray.Length; i++)
   {
     if (i + 1 == RandomArray.Length)
@@ -36,5 +37,6 @@ void Write(int[] RandomArray)
       Console.Write($"{RandomArray[i]}, ");
     }
   }
+  
   Console.Write("}");
 }

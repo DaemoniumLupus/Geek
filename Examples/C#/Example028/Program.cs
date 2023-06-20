@@ -1,15 +1,17 @@
-﻿Console.Clear();
+﻿
+Console.Clear();
 int A = GetNumberFromUser("Введите целое число: ", "Ошибка ввода!");
-int res = Multiplication(A);
+ulong res = Multiplication((ulong) A);
 Console.WriteLine($"{A} -> {res}");
 
 
-int Multiplication(int num)
+ulong Multiplication(ulong num)
 {
-  int res = 1;
+  ulong res = 1;
   while(num > 0)
   {
-    res *= num;
+    res = res * num;
+   /*  Console.WriteLine(num); */
     num--;
   }
   return res;
