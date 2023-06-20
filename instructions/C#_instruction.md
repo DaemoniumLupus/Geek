@@ -25,3 +25,4 @@ catch (Exception exc)
   return;
 }
 ```
+`out int userNumber`  - определение переменной внутри параметра
