@@ -25,4 +25,5 @@ catch (Exception exc)
   return;
 }
 ```
-`out int userNumber`  - определение переменной внутри параметра
+* `out int userNumber`  - определение переменной внутри параметра
+* `System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");` - вместо `,` в дробных числах будет выводится `.`
