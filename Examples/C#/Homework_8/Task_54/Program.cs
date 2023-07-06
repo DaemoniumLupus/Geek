@@ -17,7 +17,7 @@ PrintArray(arr);
 
 void PutStringInArray(int[,] arr, int[] mas, int indexSring)
 {
-  for (int j = 0; j < mas.Length;j++)
+  for (int j = 0; j < mas.Length; j++)
   {
     arr[indexSring, j] = mas[j];
   }
@@ -26,19 +26,19 @@ void PutStringInArray(int[,] arr, int[] mas, int indexSring)
 void SortArr(int[] mas)
 {
   int buf;
-  int min = 100;
-  for (int i = 0; i < mas.Length-1; i++)
+  for (int i = 0; i + 1 < mas.Length; i++)
   {
-
-    if (mas[mas.Length - 1] == min) return;
-    if (mas[i] < min) min = mas[i];
-    if (mas[i + 1] > mas[i])
+    for (int j = 0; j + 1 < mas.Length - i; j++)
     {
-      buf = mas[i + 1];
-      mas[i + 1] = mas[1];
-      mas[1] = buf;
+      if (mas [j+1] > mas[j])
+      {
+        buf = mas[j];
+        mas[j] = mas[j + 1];
+        mas[j + 1] = buf;
+      }
     }
-    
+
+
   }
 }
 
