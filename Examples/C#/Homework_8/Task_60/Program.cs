@@ -1,8 +1,16 @@
-﻿int[,,] arr = new int[3, 3, 3];
-int[] listNum = new int[1];
-arr = GetArray(arr, listNum);
+﻿
+
+using System.Collections.Specialized;
+using System.Reflection.Metadata.Ecma335;
+using System.ComponentModel;
+using System.Collections.Generic;
+using System;
+int[,,] arr = new int[3, 3, 3];
+List<int> listUseNumber = new List<int>();
+arr = GetArray(arr, listUseNumber);
 PrintArray(arr);
-Console.WriteLine(string.Join(" ", listNum));
+
+
 
 
 
@@ -22,7 +30,7 @@ void PrintArray(int[,,] arr)
   }
 }
 
-int[,,] GetArray(int[,,] arr, int[] list)
+int[,,] GetArray(int[,,] arr, List<int> list)
 {
   for (int i = 0; i < arr.GetLength(0); i++)
   {
@@ -37,7 +45,7 @@ int[,,] GetArray(int[,,] arr, int[] list)
   return arr;
 }
 
-int NewNonRepeatingNumber(int[] list)
+int NewNonRepeatingNumber(List<int> list)
 {
   int num = 0;
   bool repeat = true;
@@ -45,7 +53,7 @@ int NewNonRepeatingNumber(int[] list)
   {
     num = new Random().Next(10, 100);
     repeat = false;
-    for (int i = 0; i < list.Length; i++)
+    for (int i = 0; i < list.Count; i++)
     {
       if (num == list[i])
       {
@@ -54,17 +62,7 @@ int NewNonRepeatingNumber(int[] list)
       }
     }
   }
-  
+  list.Add(num);
   return num;
 }
 
-int[] NewList(int num, int[] list)
-{
-  int[] largerList = new int[list.Length + 1];
-  for (int i = 0; i < list.Length; i++)
-  {
-    largerList[i] = list[i];
-  }
-  largerList[largerList.Length - 1] = num;
-  return largerList;
-}
