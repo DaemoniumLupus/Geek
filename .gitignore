@@ -9,6 +9,8 @@
 *.userosscache
 *.sln.docstates
 *.png
+# Мои исключения
+.vscode/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
