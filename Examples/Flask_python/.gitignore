@@ -1,0 +1,7 @@
+#Flask
+Include/
+Lib/
+Scripts/
+*.cfg
+venv/
+__pycache__/
