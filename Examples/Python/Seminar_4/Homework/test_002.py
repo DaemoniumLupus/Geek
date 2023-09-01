@@ -1,5 +1,5 @@
 import unittest
-from Task002 import Translation
+from Translation import Translation
 
 
 class Test_Translation_Notation(unittest.TestCase):
