@@ -3,54 +3,127 @@ from player import Player
 
 
 class Bot(Player):
-    gor = [0, 0, 0]
-    vert = [0, 0, 0]
-    dia = [0, 0]
+    True_symbol = False
+    indexis = dict()
 
-    indexis = {}
+    bot_field = [[" "] * 3, [" "] * 3, [" "] * 3]
+    player_field = [[" "] * 3, [" "] * 3, [" "] * 3]
+
+    
     
 
-    def Counts(self, field, coord):
-        print(f"Counts coord->{coord}")
-        self.gor[coord[0]] += 1
-        self.vert[coord[1]] += 1
-        if coord[0] == coord[1]:
-            self.dia[0] += 1
-            if coord[0] == coord[1] == 2:
-                self.dia[1] += 1
-        elif coord[0] == 0 and coord[1] == 3 or coord[0] == 3 and coord[1] == 0:
-            self.dia[1] += 1
+    def Partition(self, field: list):
+        for index_str,item_str in enumerate(field):
+            for index_element,element in enumerate(item_str):
+                if element == self.symbol:
+                    self.bot_field[index_str][index_element] = "E"
+                    self.player_field[index_str][index_element] =" "
+                else:
+                    self.bot_field[index_str][index_element] = " "
+                    if element != " ":
+                        self.player_field[index_str][index_element] ="E"
+                    else:
+                        self.player_field[index_str][index_element] =" "
+        print("Bot")
+        print(self.bot_field)
+        print("Player")
+        print(self.player_field)
 
-    def Logic(self, field):
-        coord = [0, 0]
+
+    def Work_with_subField(self,field,subField,coord) -> list:
+        oponent_st = [0, 0, 0]
+        oponent_row = [0, 0, 0]
+        for index_st, item_str in enumerate(self.player_field):
+                for index_row, element in enumerate(item_str):
+                    if element == "E":
+                        oponent_st[index_st] += 1
+                        oponent_row[index_row] += 1
+
+        for index_st, i in enumerate(oponent_st):
+            if i <= 1:
+                for index_row, j in enumerate(oponent_row):
+                    if j > 1:
+                        coord[1] = index_row
+                        for index, st in enumerate(field):
+                            if st[index_row] == " ":
+                                coord[0] = index
+            elif i > 1:
+                for index_row, j in enumerate(oponent_row):
+                    coord[0] = index_st
+                    for index, st in enumerate(field):
+                        if st[index_row] == " ":
+                            coord[0] = index
+        return coord
+
+
+    def Rand_symbol(self, field) -> list:
+        coord = [randint(0, 2), randint(0, 2)]
+        return coord
+        # if field[coord[0]][coord[1]] == ' ':
+        #     field[coord[0]][coord[1]] = self.symbol
+
+    def Logic(self, field: list) -> list:
+        self.Partition(field)
+        coord = [-1, -1]
         print(field)
-        True_symbol = False
-        for index,item in enumerate(field):
-            if self.symbol in item:
-                True_symbol = True
-                print(index)
-                print(item.index(self.symbol))
-                self.indexis = {"index_row":item.index(self.symbol),"index_st":item.index(self.symbol)} 
-                 
-                
 
-        if True_symbol:
+        if self.True_symbol == False:
+            self.True_symbol = True
             while True:
                 coord = [randint(0, 2), randint(0, 2)]
-                self.Counts(field, list(coord))
-                if field[coord[0]][coord[1]] == None:
-                    field[coord[0]][coord[1]] = self.symbol
-                    return field
+                # self.Counts(field, list(coord))
+                if field[coord[0]][coord[1]] != " ":
+                    break
+                               
         else:
-            #res = self.gor + self.vert + self.dia
-            res = max(set(self.gor + self.vert + self.dia))
-            if max(self.gor) == res:
-                q = self.gor.index(res)
-                print (res)
-                buf_st = self.Create_Buffer_String(field,q,0,"gor")
-                index_With_Symbol = buf_st.index(self.symbol)
+            if (self.player_field[1][1] == 'E' and (self.player_field[0][0] == 'E' or self.player_field[2][2] == 'E')) or\
+               (self.player_field[0][0] == 'E' and self.player_field[2][2] == 'E'):
+                for i in range(3):
+                    if field[i][i] == ' ':
+                        coord = [i,i]        
+            elif (self.player_field[1][1] == 'E' and (self.player_field[0][2] == 'E' or self.player_field[2][0] == 'E')) or\
+            (self.player_field[0][2] == 'E' and self.player_field[2][0] == 'E'):
+                if field[0][2] == ' ':
+                    coord = [0,2]
+                if field[2][0] == ' ':
+                    coord == [2,0]
+                if field[1][1] == ' ':
+                    coord = [1][1]
+            if coord[0] == -1 and coord[1] == -1:  
+                coord = self.Work_with_subField(field,self.player_field,coord)
+            
+            coord = self.Work_with_subField(field,self.bot_field,coord)
                 
-                    
+
+        # проверка на пустые координаты
+        while coord[0] == -1 and coord[1] == -1 or field[coord[0]][coord[1]] != " ":
+            coord = self.Rand_symbol(field)
+
+        # внесение заданных координат в поле
+        field[coord[0]][coord[1]] = self.symbol
+
+        return field
 
     def Enter_turn(self, field) -> list:
         return self.Logic(field)
+
+
+class test_game:
+    game_field = [["O", "X", " "],
+                  ["X", "O", " "],
+                  [" ", " ", " "]]
+
+    def __init__(self):
+        super().__init__()
+        self.game_test()
+
+    def game_test(self):
+        bot = Bot()
+        bot.True_symbol = True
+        bot.symbol = "X"
+        self.game_field = bot.Enter_turn(self.game_field)
+        for i in self.game_field:
+            print(i)
+
+
+# game = test_game()
