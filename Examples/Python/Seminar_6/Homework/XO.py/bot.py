@@ -97,11 +97,11 @@ class Bot(Player):
                 coord = self.Work_with_subField(field,self.bot_field,coord)
                 
 
-        # проверка на пустые координаты
+        
         while coord[0] == -1 and coord[1] == -1 or field[coord[0]][coord[1]] != " ":
             coord = self.Rand_symbol(field)
 
-        # внесение заданных координат в поле
+       
         field[coord[0]][coord[1]] = self.symbol
 
         return field
