@@ -24,11 +24,23 @@ class Bot(Player):
                         self.player_field[index_str][index_element] ="E"
                     else:
                         self.player_field[index_str][index_element] =" "
-        print("Bot")
-        print(self.bot_field)
-        print("Player")
-        print(self.player_field)
 
+    def Diagonaly(self,subfield,field,coord):
+        
+        if (subfield[1][1] == 'E' and (subfield[0][0] == 'E' or subfield[2][2] == 'E')) or\
+               (subfield[0][0] == 'E' and subfield[2][2] == 'E'):
+                for i in range(3):
+                    if field[i][i] == ' ':
+                        coord = [i,i]        
+        elif (subfield[1][1] == 'E' and (subfield[0][2] == 'E' or subfield[2][0] == 'E')) or\
+            (subfield[0][2] == 'E' and subfield[2][0] == 'E'):
+                if field[0][2] == ' ':
+                    coord = [0,2]
+                if field[2][0] == ' ':
+                    coord == [2,0]
+                if field[1][1] == ' ':
+                    coord = [1][1]
+        return coord
 
     def Work_with_subField(self,field,subField,coord) -> list:
         oponent_st = [0, 0, 0]
@@ -65,34 +77,24 @@ class Bot(Player):
     def Logic(self, field: list) -> list:
         self.Partition(field)
         coord = [-1, -1]
-        print(field)
 
         if self.True_symbol == False:
             self.True_symbol = True
             while True:
                 coord = [randint(0, 2), randint(0, 2)]
                 # self.Counts(field, list(coord))
-                if field[coord[0]][coord[1]] != " ":
+                if field[coord[0]][coord[1]] == " ":
                     break
                                
         else:
-            if (self.player_field[1][1] == 'E' and (self.player_field[0][0] == 'E' or self.player_field[2][2] == 'E')) or\
-               (self.player_field[0][0] == 'E' and self.player_field[2][2] == 'E'):
-                for i in range(3):
-                    if field[i][i] == ' ':
-                        coord = [i,i]        
-            elif (self.player_field[1][1] == 'E' and (self.player_field[0][2] == 'E' or self.player_field[2][0] == 'E')) or\
-            (self.player_field[0][2] == 'E' and self.player_field[2][0] == 'E'):
-                if field[0][2] == ' ':
-                    coord = [0,2]
-                if field[2][0] == ' ':
-                    coord == [2,0]
-                if field[1][1] == ' ':
-                    coord = [1][1]
+            coord = self.Diagonaly(self.bot_field,field,coord)
+            if coord[0] == -1 and coord[1] == -1:
+                coord = self.Diagonaly(self.player_field,field,coord)
+            
             if coord[0] == -1 and coord[1] == -1:  
                 coord = self.Work_with_subField(field,self.player_field,coord)
-            
-            coord = self.Work_with_subField(field,self.bot_field,coord)
+            if coord[0] == -1 and coord[1] == -1:  
+                coord = self.Work_with_subField(field,self.bot_field,coord)
                 
 
         # проверка на пустые координаты

@@ -3,6 +3,7 @@ from bot import Bot
 from player import Player
 import sys
 from random import randint
+import os
 
 class Game:
 
@@ -96,18 +97,18 @@ class Game:
       player[1].symbol = 'X'
       count_game = [1,0,1,0,1,0,1,0,1]
 
+    self.game_field = [[' ']*3 ,[' ']*3,[' ']*3]
     for i in count_game:
       self.game_field = player[i].Enter_turn(self.game_field)
+      os.system("cls")
       self.Paint_Game()
       winner = self.Who_win(player[i].symbol)
       if winner != '':
         if winner == player[0].symbol:
           print("Player win!!!")
-          self.game_field = [[' ']*3 ,[' ']*3,[' ']*3]
           break
         else:
           print("Bot win!!!")
-          self.game_field = [[' ']*3 ,[' ']*3,[' ']*3]
           break
       
       
