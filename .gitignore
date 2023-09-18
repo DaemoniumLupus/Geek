@@ -12,6 +12,7 @@
 # Мои исключения
 .vscode/
 .folder/
+sample_data/
 
 #Flask
 

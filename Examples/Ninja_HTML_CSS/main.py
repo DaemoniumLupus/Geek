@@ -20,4 +20,3 @@ def say_stop():
 
 if __name__ == '__main__':
     app.run()
-# TODO 37:21 
