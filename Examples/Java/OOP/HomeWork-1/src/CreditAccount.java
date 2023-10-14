@@ -6,6 +6,8 @@ public class CreditAccount extends Account{
             balance -= num;
             balance -= num * 0.01;
             
-        }else System.err.println("Only positive numbers!");
+        }else {
+            System.err.println("Only positive numbers!");
+        }
     }
 }
