@@ -40,7 +40,7 @@ namespace Server
         Console.WriteLine($"Клиент написал - {message}");
 
 
-        Console.WriteLine("Дайте сообщение серверу!");
+        Console.WriteLine("Дайте сообщение от сервера");
         string answer = Console.ReadLine();
         sWriter.WriteLine(answer);
         sWriter.Flush();
