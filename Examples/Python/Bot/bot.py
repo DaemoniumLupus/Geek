@@ -2,11 +2,12 @@ from random import *
 import telebot
 import json
 import requests
+from api import myApi
 
 film = []
 
-API_TOKEN = '6096485263:AAHTp0ib0iEJBnBWsvkEmZ19_bV2AMwBgAM'
-bot  = telebot.TeleBot(API_TOKEN)
+
+bot  = telebot.TeleBot(myApi.API_TOKEN)
 
 @bot.message_handler(commands = ['start'])
 def start_message(message):

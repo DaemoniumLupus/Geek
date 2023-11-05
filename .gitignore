@@ -13,6 +13,7 @@
 .vscode/
 .folder/
 sample_data/
+api.*
 
 #Flask
 
