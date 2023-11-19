@@ -1,4 +1,4 @@
-
+package HomeWork1.src;
 public class Main {
     public static void main(String[] args) throws Exception {
         Account acc = new Account();
@@ -7,7 +7,8 @@ public class Main {
         System.out.println(acc.getAmount());
         
         CreditAccount creditAccount = new CreditAccount();
-        creditAccount.put(255);
+        System.out.println("!!!");
+        creditAccount.put(255.5);
         creditAccount.take(55);
         System.out.println(creditAccount.getAmount());
 

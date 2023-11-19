@@ -1,22 +1,27 @@
+package HomeWork1.src;
 
 public class Account {
     protected double balance = 0;
 
 
 
-    public void put(int num){
+    public double put(double num){
         if (num > 0){
             balance += num;
+            return balance;
         }else {
             System.err.println("Only positive numbers!");
+            return balance;
         }
     }
 
-    public void take(int num){
+    public double take(double num){
         if (num > 0){
             balance -= num;
+            return balance;
         }else {
             System.err.println("Only positive numbers!");
+            return balance;
         }
     }
 
