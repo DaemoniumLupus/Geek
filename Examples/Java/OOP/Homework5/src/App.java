@@ -77,7 +77,7 @@ public class App {
         }
     }
 
-    \]vfglop;
+    
     static class JSON implements Report{
         @Override
         public byte[] createReport(Document document){
