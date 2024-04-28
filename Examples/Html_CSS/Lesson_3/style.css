@@ -64,36 +64,72 @@ a {
 
 
 header {
-    padding: 40px;
+    padding: 40px 0;
 }
 .main{
     padding: 44px 0;
 }
 
+.navigation {
+    display: flex;
+}
+
+.specific-btn{
+    display: flex;
+
+}
+.specific-btn img{
+    padding: 3.5px 0;
+    padding-left: 6px;
+    
+}
+
 .navigation-links a{
     font-size: 14px;
     margin-right: 14px;
+    padding: 10px 10px;
 }
 
-.logos {
-    padding: 100px 0;
+.navigation-links {
+    display: flex;
+    justify-content: right;
+    right: 0;
+    margin-right: 0 ;
 }
 
-.logos a {
-    padding: 0 48px;
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainContent__leftSide {
+    
+    justify-content: start;
+}
+.mainContent__leftSide h1 {
+    margin-bottom: 20px;
+    font-size: 60px;
+    align-items: start;
+}
+
+.mainContent__leftSide p {
+    align-items: center;
+}
+
+.mainContent__leftSide-btnList{
+    align-items: end;
 }
 
 .mainContent__leftSide-btnList{
     margin-top: 32px;
 }
-
-.mainContent__leftSide h1 {
-    margin-bottom: 20px;
-    font-size: 60px;
-}
-
 p {
     font-size: 20px;
 }
 
+.logos {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+}
 
