@@ -81,7 +81,6 @@ header {
 .specific-btn img{
     padding: 3.5px 0;
     padding-left: 6px;
-    
 }
 
 .navigation-links a{
@@ -103,7 +102,6 @@ header {
 }
 
 .mainContent__leftSide {
-    
     justify-content: start;
 }
 .mainContent__leftSide h1 {
@@ -123,6 +121,7 @@ header {
 .mainContent__leftSide-btnList{
     margin-top: 32px;
 }
+
 p {
     font-size: 20px;
 }
@@ -132,4 +131,121 @@ p {
     justify-content: space-between;
     padding: 100px 0;
 }
+
+.info {
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info h1 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 24px;
+    color: #000000;
+}
+
+.info p {
+    font-size: 14px;
+    color: #666666;
+}
+
+.info h3 {
+    font-size: 14px;
+    color: #000000;
+    padding-top: 25px;
+}
+
+.info img {
+    align-items: start;
+}
+
+.info div {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 40px 34px;
+}
+
+.centre {
+    box-shadow: 15px 25px 56px 6px #f3f3f3;
+}
+
+.choose {
+    padding: 100px 0;
+    display:flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+}
+.choose-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.choose h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 48px;
+}
+
+.choose p {
+    font-size: 16px;
+    color: #888888;
+}
+
+.choose section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* padding: 40px 34px; */
+}
+.choose section div{
+    background-color: #ffffff;
+}
+
+.choose section h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.text{
+    margin: 34px;
+    margin-top: 32px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.case{
+    margin: 0 20px;
+}
+
+.learn-more-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 166px;
+    height: 60px;
+    border: none;
+    background-color: #fff;
+    background-image:url('./img/Start_btn.png');
+    background-size: cover;
+}
+
+.choose a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
