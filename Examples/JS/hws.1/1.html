@@ -22,50 +22,48 @@
     </div>
 
     <script>
-        // "use strict";
-        // 1. Найти по id, используя getElementById, элемент с id равным "super_link" и вывести этот элемент в консоль.
+      // "use strict";
+      // 1. Найти по id, используя getElementById, элемент с id равным "super_link" и вывести этот элемент в консоль.
 
-        const supL= document.getElementById("super_link");
-        console.log(supL);
+      const supL = document.getElementById("super_link");
+      console.log(supL);
 
-        
-        // 2. Внутри всех элементов на странице, которые имеют класс "card-link", поменяйте текст внутри элемента на "ссылка".
-        
-        const cardL = document.querySelectorAll('.card-link');
-        cardL.forEach(element => {
-            element.textContent = "ссылка";
-        });
+      // 2. Внутри всех элементов на странице, которые имеют класс "card-link", поменяйте текст внутри элемента на "ссылка".
 
-        // 3. Найти все элементы на странице с классом "card-link", которые лежат в элементе с классом "card-body" и вывести полученную коллекцию в консоль.
-        
-        const cardB = document.querySelectorAll('.card-body > .card-link');
-        console.log(cardB);
-        
-        // 4. Найти первый попавшийся элемент на странице у которого есть атрибут data-number со значением 50 и вывести его в консоль.
-        
-        console.log(document.querySelector('*[data-number="50"]'));
+      const cardL = document.querySelectorAll(".card-link");
+      cardL.forEach((element) => {
+        element.textContent = "ссылка";
+      });
 
-        // 5. Выведите содержимое тега title в консоль.
-        
-        console.log(document.querySelector('title'));
+      // 3. Найти все элементы на странице с классом "card-link", которые лежат в элементе с классом "card-body" и вывести полученную коллекцию в консоль.
 
-        // 6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
+      const cardB = document.querySelectorAll(".card-body > .card-link");
+      console.log(cardB);
 
-        const cardT = document.querySelector('.card-title');
-        console.log(cardT.parentNode);
+      // 4. Найти первый попавшийся элемент на странице у которого есть атрибут data-number со значением 50 и вывести его в консоль.
 
-        // 7. Создайте тег 'p', запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
+      console.log(document.querySelector('*[data-number="50"]'));
 
-        const newP = document.createElement('p');
-        newP.textContent = "Привет";
-        const cardEL = document.querySelector('.card');
-        cardEL.prepend(newP);
+      // 5. Выведите содержимое тега title в консоль.
 
-        // 8. Удалите тег h6 на странице.
+      console.log(document.querySelector("title"));
 
-        const rem = document.querySelector('h6');
-        rem.remove();
+      // 6. Получите элемент с классом "card-title" и выведите его родительский узел в консоль.
 
+      const cardT = document.querySelector(".card-title");
+      console.log(cardT.parentNode);
+
+      // 7. Создайте тег 'p', запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
+
+      const newP = document.createElement("p");
+      newP.textContent = "Привет";
+      const cardEL = document.querySelector(".card");
+      cardEL.prepend(newP);
+
+      // 8. Удалите тег h6 на странице.
+
+      const rem = document.querySelector("h6");
+      rem.remove();
     </script>
   </body>
 </html>
