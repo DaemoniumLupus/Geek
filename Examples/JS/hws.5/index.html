@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      .user_box {
+        max-width: 1174px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        width: 250px;
+        border: 1px solid #000;
+        padding: 16px;
+        flex-wrap: wrap;
+      }
+      .user_img {
+        display: block;
+        max-width: 100%;
+      }
+      h2 {
+        margin-top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="users_box"></div>
+
+    <script src="data.js"></script>
+    <script>
+      // console.log(data);
+      let parseData = JSON.parse(data);
+      console.log(parseData);
+
+      const boxEl = document.querySelector(".users_box");
+
+      const userEl = document.createElement("div");
+      userEl.classList.add("user_box");
+
+      const nameEl = document.createElement("h2");
+      nameEl.classList.add("user_name");
+      nameEl.textContent = `${parseData.results[0].name.title}.${parseData.results[0].name.first} ${parseData.results[0].name.last}`;
+
+      const locationEl = document.createElement("p");
+      locationEl.textContent = `${parseData.results[0].location.country}(${parseData.results[0].location.timezone.offset})`;
+
+      const imgEl = document.createElement("img");
+      imgEl.classList.add("user_img");
+      imgEl.src = parseData.results[0].picture.large;
+
+      const emailEl = document.createElement("p");
+      emailEl.classList.add("user_email");
+      emailEl.textContent = parseData.results[0].email;
+
+      userEl.appendChild(imgEl);
+      userEl.appendChild(nameEl);
+      userEl.appendChild(locationEl);
+      userEl.appendChild(emailEl);
+      boxEl.appendChild(userEl);
+    </script>
+  </body>
+</html>
