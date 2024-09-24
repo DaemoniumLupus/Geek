@@ -883,6 +883,15 @@ footer p {
      font-size: 24px;
      line-height: 29px;
   }
+  
+  .promo .promo__heading::after {
+    content:attr(data-text);
+    color:red;
+    transform:translateX(-100%);
+    position:absolute;
+  }
+
+  
 
   .sale center {
      padding-inline: 16px;
