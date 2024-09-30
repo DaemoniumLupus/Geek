@@ -263,6 +263,7 @@ summary::-webkit-details-marker {
 }
 
 .product-box {
+  display: grid;
   padding-bottom: 96px;
 }
 
@@ -736,7 +737,7 @@ summary::-webkit-details-marker {
 }
 
 .fourth_section {
-  background-image: url(../image/subscribe.png);
+  background-image: url(../image/subscribe.jpg);
   background-size: cover;
   height: 448px;
   display: flex;
@@ -1172,7 +1173,6 @@ footer p {
   }
 
   .product {
-    display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: auto;
   }
