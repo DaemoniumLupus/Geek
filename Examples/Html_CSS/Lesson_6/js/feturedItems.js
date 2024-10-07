@@ -1,8 +1,10 @@
-const json = [
+window ['json'] = [
     {
         "position":"one",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Blue",
         "price": "$52.00",
         "img": "../image/product1.jpg"
     },
@@ -10,6 +12,8 @@ const json = [
         "position":"two",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Black",
         "price": "$52.00",
         "img": "../image/product2.jpg"
     },
@@ -17,6 +21,8 @@ const json = [
         "position":"three",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Blue",
         "price": "$52.00",
         "img": "../image/product3.jpg"
     },
@@ -24,6 +30,8 @@ const json = [
         "position":"four",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Blue",
         "price": "$52.00",
         "img": "../image/product4.jpg"
     },
@@ -31,6 +39,8 @@ const json = [
         "position":"five",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Red",
         "price": "$52.00",
         "img": "../image/product5.jpg"
     },
@@ -38,6 +48,8 @@ const json = [
         "position":"six",
         "name": "LLERY X M'O CAPSULE",
         "text": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+        "size": "XS",
+        "color": "Green",
         "price": "$52.00",
         "img": "../image/product6.jpg"
     }
@@ -79,8 +91,6 @@ function items() {
     const boxContent = document.createElement("div");
     boxContent.className = "product-box__content";
     
-    
-
     productions.appendChild(boxHeading);
     productions.appendChild(boxText);
     productions.appendChild(boxContent);
@@ -89,8 +99,6 @@ function items() {
     json.forEach(element => {
         const product = document.createElement("div");
         product.className = `product ${element.position}`;
-        console.log(product.style);
-
 
         const img = document.createElement("img");
         img.classList = "product__img";
@@ -111,7 +119,7 @@ function items() {
         productPrice.className = "product__price";
         productPrice.textContent = `${element.price}`;
 
-        const productAdd = document.createElement("a");
+        const productAdd = document.createElement("btn");
         productAdd.classList = "product__add";
 
         const svg = document.createElementNS(xmlns, "svg");
@@ -132,7 +140,5 @@ function items() {
         content.appendChild(productText);
         content.appendChild(productPrice);
     });
-
-    console.log(boxContent.style);
 }
 

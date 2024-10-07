@@ -866,6 +866,78 @@ footer p {
   background-color: #f16d7f;
 }
 
+
+
+.cart__box {
+  padding: 32px;
+}
+
+.item {
+  padding: 32px;
+  width: 652px;
+  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  display: flex;
+}
+
+.item__content {
+  padding: 22px 31px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.item__heading {
+  width: 262px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #222222;
+  margin-bottom: 42px;
+}
+
+.item__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #575757;
+  margin-bottom: 6px;
+}
+
+.item__input {
+  width: 44px;
+  height: 24.95px;
+  border: 1px solid #EAEAEA;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #656565;
+  margin-left: 24px;
+}
+
+.item__color {
+  color: #EF5B70;
+}
+
+.item__product-delete {
+  position: absolute;
+  right: 0;
+  margin: 5px 10px;
+  justify-content: right;
+  background-image: url("../image/Vector.png");
+  background-color: #EAEAEA;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-size: cover;
+}
+
 @media (max-width: 1024px) and (min-width: 768px) {
   header {
      padding-inline: 32px;
